@@ -1,0 +1,267 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+.app{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    background:#111827;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.sidebar h2{
+    color:#38bdf8;
+    margin-bottom:30px;
+}
+
+.menu p{
+    margin:15px 0;
+    color:#cbd5e1;
+}
+
+footer{
+    color:#94a3b8;
+    margin-top:30px;
+}
+
+/* Chat Section */
+
+.chat-section{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-header{
+    background:#111827;
+    padding:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.chat-box{
+    flex:1;
+    padding:20px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.user-message,
+.bot-message{
+    max-width:70%;
+    padding:14px;
+    margin:10px 0;
+    border-radius:15px;
+}
+
+.user-message{
+    align-self:flex-end;
+    background:#2563eb;
+}
+
+.bot-message{
+    align-self:flex-start;
+    background:#1e293b;
+}
+
+/* Input Area */
+
+.input-area{
+    display:flex;
+    padding:20px;
+    background:#111827;
+}
+
+.input-area input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+    outline:none;
+}
+
+.input-area button{
+    padding:15px 25px;
+    border:none;
+    margin-left:10px;
+    border-radius:10px;
+    background:#38bdf8;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* Contact Section */
+
+.contact-section{
+    background:#111827;
+    padding:30px;
+}
+
+.contact-section h2{
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.contact-section form{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-section input,
+.contact-section textarea{
+    margin-bottom:15px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+    outline:none;
+}
+
+.contact-section textarea{
+    height:120px;
+    resize:none;
+}
+
+.contact-section button{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#38bdf8;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .user-message,
+    .bot-message{
+        max-width:90%;
+    }
+}
+
+/* About Page */
+
+.about-container{
+
+    max-width:800px;
+
+    margin:50px auto;
+
+    background:#111827;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-container h1{
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+.about-container h2{
+
+    margin-top:25px;
+
+    color:#38bdf8;
+}
+
+.about-container p,
+.about-container li{
+
+    margin-top:10px;
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+}
+
+.about-container ul{
+
+    padding-left:20px;
+}
+
+.about-container button{
+
+    margin-top:30px;
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#38bdf8;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.about-container button:hover{
+
+    background:#0ea5e9;
+}
+
+/* About Button */
+
+.about-btn{
+
+    margin-top:20px;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#38bdf8;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.about-btn:hover{
+
+    background:#0ea5e9;
+}

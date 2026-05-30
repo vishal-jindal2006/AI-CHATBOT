@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Chatbot</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🤖 AI Chatbot</h2>
+
+        <div class="menu">
+
+            <p>✔ Smart Responses</p>
+            <p>✔ Fast Replies</p>
+            <p>✔ Modern UI</p>
+            <p>✔ AI Logic</p>
+            <p>✔ Responsive Design</p>
+
+            <a href="/about">
+
+                <button class="about-btn">
+                    About Page
+                </button>
+
+            </a>
+
+        </div>
+
+        <footer>
+            Created by Vishal Jindal
+        </footer>
+
+    </div>
+
+    <!-- Main Chat Area -->
+
+    <div class="chat-section">
+
+        <div class="chat-header">
+            Professional AI Chatbot
+        </div>
+
+        <div class="chat-box" id="chat-box">
+
+            <div class="bot-message">
+                Hello 👋 Welcome to AI Chatbot
+            </div>
+
+        </div>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your message..."
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+        <!-- Contact Us Section -->
+
+        <div class="contact-section">
+
+            <h2>Contact Us</h2>
+
+            <form id="contact-form">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
