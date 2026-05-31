@@ -1,3 +1,5 @@
+/* SEND MESSAGE */
+
 function sendMessage(){
 
     const input = document.getElementById("user-input");
@@ -8,7 +10,7 @@ function sendMessage(){
 
     if(userText === "") return;
 
-    // USER MESSAGE
+    /* USER MESSAGE */
 
     const userMessage = document.createElement("div");
 
@@ -18,175 +20,153 @@ function sendMessage(){
 
     chatBox.appendChild(userMessage);
 
-    // RESPONSES
+    chatBox.scrollTop = chatBox.scrollHeight;
 
-    const responses = {
+    /* CLEAR INPUT */
 
-        "hi": "Hello 👋 How can I help you today?",
+    input.value = "";
 
-        "hello": "Hi there 😊",
+    /* TYPING ANIMATION */
 
-        "hey": "Hey 👋 Nice to meet you!",
+    const typingMessage = document.createElement("div");
 
-        "good morning": "Good Morning ☀️",
+    typingMessage.className = "bot-message";
 
-        "good afternoon": "Good Afternoon 😊",
+    typingMessage.innerText = "Typing...";
 
-        "good evening": "Good Evening 🌙",
+    chatBox.appendChild(typingMessage);
 
-        // Basic Questions
+    chatBox.scrollTop = chatBox.scrollHeight;
 
-        "how are you": "I'm doing great 🚀",
-
-        "your name": "I am an AI Rule-Based Chatbot 🤖",
-
-        "who created you": "I was created by Vishal Jindal 😎",
-
-        "what can you do": "I can answer predefined questions and chat with you!",
-
-        "help": "Try asking greetings, time, date, jokes, motivation or chatbot info.",
-
-        // Time & Date
-
-        "time": new Date().toLocaleTimeString(),
-
-        "date": new Date().toLocaleDateString(),
-
-
-        // Motivation
-
-        "motivate me": "Success starts with self-belief 💪",
-
-        "inspire me": "Push yourself because nobody else will do it for you 🚀",
-
-        "tips for success": "Stay consistent, disciplined and keep learning daily 💯",
-
-        "study tips": "Study in small focused sessions with proper breaks 📚",
-
-        "gym motivation": "Train like a beast 💪 Results take time.",
-
-        // Fun
-
-        "tell me a joke": "Why do programmers hate nature? Because it has too many bugs 😂",
-
-        "fun fact": "Python was named after Monty Python, not the snake 😄",
-
-        // Feelings
-
-        "i am sad": "Don't worry ❤️ Better days are coming.",
-
-        "i am happy": "That's amazing 😍 Keep smiling!",
-
-        "i am tired": "Take some rest 😴 You deserve it.",
-
-        // Technology
-
-        "what is ai": "AI stands for Artificial Intelligence.",
-
-        "what is machine learning": "Machine Learning enables systems to learn from data.",
-
-        "what is deep learning": "Deep Learning is a subset of Machine Learning using neural networks.",
-
-        "what is chatbot": "A chatbot is a software application that simulates conversation.",
-
-        "what is python": "Python is a popular programming language.",
-
-        "what is flask": "Flask is a lightweight Python web framework.",
-
-        "what is programming": "Programming is the process of creating software using code.",
-
-        "what is coding": "Coding means writing instructions for computers.",
-
-        "what is html": "HTML is used to structure web pages.",
-
-        "what is css": "CSS is used for styling websites.",
-
-        "what is javascript": "JavaScript adds functionality to websites.",
-
-        "what is frontend": "Frontend is the visible part of a website.",
-
-        "what is backend": "Backend handles server-side logic and databases.",
-
-        "what is data science": "Data Science is extracting insights from data.",
-
-        // Career
-
-        "how to become ai engineer": "Learn Python, Machine Learning, Deep Learning and build projects 🚀",
-
-        "how to become web developer": "Learn HTML, CSS, JavaScript and backend technologies.",
-
-        "resume tips": "Keep your resume clean, short and project-focused.",
-
-        "interview tips": "Practice projects, communication and coding problems regularly.",
-
-        // Entertainment
-
-        "recommend movie": "You should watch Interstellar 🚀",
-
-        "best actor": "There are many great actors, but everyone has their favorite 😄",
-
-        "best web series": "Breaking Bad is one of the highest-rated series.",
-
-        // AI Personality
-
-        "do you love me": "Of course ❤️ I love talking with you!",
-
-        "are you real": "I am a virtual AI chatbot 🤖",
-
-        "can you think": "I follow predefined rule-based logic.",
-
-        "are you intelligent": "I am intelligent within my programmed rules 😎",
-
-        // Developer Info
-
-        "portfolio": "My developer is building awesome AI projects 🚀",
-
-        "github": "You can upload this project on GitHub for your portfolio.",
-
-        // Weather
-
-        "how is weather": "I cannot check live weather yet 🌤️",
-
-        // Food
-
-        "favorite food": "I don't eat food 😄 but pizza sounds amazing 🍕",
-
-        // Sports
-
-        "favorite sport": "Football and cricket are very popular ⚽🏏",
-
-        // Thanks
-
-        "thank you": "You're welcome 😊",
-
-        "thanks": "Happy to help 🚀",
-
-        // Exit
-
-        "bye": "Goodbye 👋 Have a wonderful day!",
-
-        "exit": "Session ended 👋"
-    };
-
-    // BOT MESSAGE
-
-    const botMessage = document.createElement("div");
-
-    botMessage.className = "bot-message";
-
-    botMessage.innerText =
-        responses[userText.toLowerCase()]
-        || "Sorry 😅 I don't understand that.";
+    /* BOT RESPONSE */
 
     setTimeout(() => {
+
+        typingMessage.remove();
+
+        const botMessage = document.createElement("div");
+
+        botMessage.className = "bot-message";
+
+        const response =
+            responses[userText.toLowerCase()]
+            || getSmartResponse(userText);
+
+        botMessage.innerText = response;
 
         chatBox.appendChild(botMessage);
 
         chatBox.scrollTop = chatBox.scrollHeight;
 
-    }, 500);
+    }, 1000);
+}
 
-    input.value = "";
+/* RULE-BASED RESPONSES */
+
+const responses = {
+
+    "hi":"Hello 👋 How can I help you today?",
+
+    "hello":"Hi there 😊",
+
+    "hey":"Hey 👋 Nice to meet you!",
+
+    "good morning":"Good Morning ☀️",
+
+    "good night":"Good Night 🌙",
+
+    "how are you":"I'm doing great 🚀",
+
+    "your name":"I am Professional AI Chatbot 🤖",
+
+    "what is your name":"I am Professional AI Chatbot 🤖",
+
+    "who created you":"I was created by Vishal Jindal 🚀",
+
+    "what can you do":"I can answer predefined questions and chat with you!",
+
+    "help":"Try asking about AI, coding, movies or motivation 🚀",
+
+    "time":new Date().toLocaleTimeString(),
+
+    "date":new Date().toLocaleDateString(),
+
+    "tell me a joke":"Why do programmers hate bugs? Because they make life difficult 😂",
+
+    "motivate me":"Success starts with self-belief 💪",
+
+    "python":"Python is amazing for AI and web development 🐍",
+
+    "html":"HTML creates website structure 🌐",
+
+    "css":"CSS styles websites beautifully 🎨",
+
+    "javascript":"JavaScript adds functionality ⚡",
+
+    "what is ai":"AI stands for Artificial Intelligence 🤖",
+
+    "bye":"Goodbye 👋 Have a wonderful day!",
+
+    "thanks":"You're welcome 😊",
+
+    "thank you":"Happy to help 🚀"
+};
+
+/* SMART RESPONSES */
+
+function getSmartResponse(message){
+
+    message = message.toLowerCase();
+
+    if(message.includes("ai")){
+
+        return "Artificial Intelligence is changing the future 🚀";
+    }
+
+    else if(message.includes("python")){
+
+        return "Python is powerful for AI and backend development 🐍";
+    }
+
+    else if(message.includes("html")){
+
+        return "HTML is used to build website structure 🌐";
+    }
+
+    else if(message.includes("css")){
+
+        return "CSS makes websites beautiful 🎨";
+    }
+
+    else if(message.includes("javascript")){
+
+        return "JavaScript adds interactivity ⚡";
+    }
+
+    else if(message.includes("movie")){
+
+        return "Interstellar is a great sci-fi movie 🚀";
+    }
+
+    else if(message.includes("chatbot")){
+
+        return "Chatbots automate communication using AI 🤖";
+    }
+
+    else if(message.includes("love")){
+
+        return "Love and coding both need patience ❤️";
+    }
+
+    else if(message.includes("study")){
+
+        return "Stay consistent and practice daily 📚";
+    }
+
+    else{
+
+        return "Sorry 😅 I don't understand that yet.";
+    }
 }
 
 /* CLEAR CHAT */
@@ -209,4 +189,39 @@ function toggleSidebar(){
     const sidebar = document.getElementById("sidebar");
 
     sidebar.classList.toggle("active");
+}
+
+/* ENTER KEY SUPPORT */
+
+document
+.getElementById("user-input")
+.addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+
+        sendMessage();
+    }
+});
+
+/* VOICE ASSISTANT */
+
+function startVoice(){
+
+    const recognition =
+        new webkitSpeechRecognition();
+
+    recognition.lang = "en-US";
+
+    recognition.start();
+
+    recognition.onresult = function(event){
+
+        const voiceText =
+            event.results[0][0].transcript;
+
+        document.getElementById("user-input").value =
+            voiceText;
+
+        sendMessage();
+    };
 }

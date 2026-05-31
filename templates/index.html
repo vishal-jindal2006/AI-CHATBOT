@@ -7,9 +7,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI Chatbot</title>
+    <title>Professional AI Chatbot</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -17,8 +18,20 @@
 
     <!-- MOBILE MENU BUTTON -->
 
-    <button class="menu-toggle" onclick="toggleSidebar()">
+    <button class="menu-toggle"
+    onclick="toggleSidebar()">
+
         ☰
+
+    </button>
+
+    <!-- VOICE BUTTON -->
+
+    <button class="voice-btn"
+    onclick="startVoice()">
+
+        🎤
+
     </button>
 
     <div class="app">
@@ -35,11 +48,11 @@
 
                 <p>✔ Smart Responses</p>
 
-                <p>✔ Fast Replies</p>
+                <p>✔ Voice Assistant</p>
+
+                <p>✔ Typing Animation</p>
 
                 <p>✔ Modern UI</p>
-
-                <p>✔ AI Logic</p>
 
                 <p>✔ Responsive Design</p>
 
@@ -50,21 +63,28 @@
             <a href="/about">
 
                 <button class="about-btn">
+
                     About Page
+
                 </button>
 
             </a>
 
-            <!-- CLEAR CHAT BUTTON -->
+            <!-- CLEAR CHAT -->
 
-            <button class="clear-btn" onclick="clearChat()">
+            <button class="clear-btn"
+            onclick="clearChat()">
+
                 Clear Chat
+
             </button>
 
             <!-- FOOTER -->
 
             <div class="footer">
-                Created by Vishal Jindal
+
+                Created by Vishal Jindal 🚀
+
             </div>
 
         </div>
@@ -74,15 +94,20 @@
         <div class="main-content">
 
             <h1 class="hero-title">
+
                 Professional AI Chatbot
+
             </h1>
 
             <!-- CHAT BOX -->
 
-            <div class="chat-box" id="chat-box">
+            <div class="chat-box"
+            id="chat-box">
 
                 <div class="bot-message">
+
                     Hello 👋 Welcome to AI Chatbot
+
                 </div>
 
             </div>
@@ -92,13 +117,14 @@
             <div class="chat-input-area">
 
                 <input
-                    type="text"
-                    id="user-input"
-                    placeholder="Type your message..."
-                >
+                type="text"
+                id="user-input"
+                placeholder="Type your message...">
 
                 <button onclick="sendMessage()">
+
                     Send
+
                 </button>
 
             </div>
@@ -106,37 +132,37 @@
             <!-- CONTACT SECTION -->
 
             <h2 class="contact-title">
+
                 Contact Us
+
             </h2>
 
             <form
-                class="contact-form"
-                action="/contact"
-                method="POST"
-            >
+            class="contact-form"
+            action="/contact"
+            method="POST">
 
                 <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                >
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required>
 
                 <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                >
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required>
 
                 <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    required
-                ></textarea>
+                name="message"
+                placeholder="Your Message"
+                required></textarea>
 
                 <button type="submit">
+
                     Submit
+
                 </button>
 
             </form>
@@ -145,7 +171,9 @@
 
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script
+    src="{{ url_for('static', filename='script.js') }}">
+    </script>
 
 </body>
 
