@@ -194,13 +194,11 @@ def get_response():
 
 def contact():
 
-    data = request.json
+    name = request.form["name"]
 
-    name = data["name"]
+    email = request.form["email"]
 
-    email = data["email"]
-
-    message = data["message"]
+    message = request.form["message"]
 
     # Save messages into text file
 
@@ -214,11 +212,7 @@ def contact():
 
         file.write("-" * 40 + "\n")
 
-    return jsonify({
-
-        "status": "success"
-    })
-
+    return "Message Sent Successfully 🚀"
 
 # Run App
 
