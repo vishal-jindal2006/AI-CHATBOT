@@ -1,263 +1,71 @@
+/* RESET */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
 }
 
+/* BODY */
+
 body{
-    background:#0f172a;
+    background:#08122e;
     color:white;
 }
+
+/* APP LAYOUT */
 
 .app{
     display:flex;
     min-height:100vh;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 
 .sidebar{
-    width:260px;
-    background:#111827;
-    padding:30px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+
+    width:250px;
+    background:#06102b;
+    padding:30px 20px;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    transition:0.3s;
+    z-index:1000;
 }
+
+/* SIDEBAR TITLE */
 
 .sidebar h2{
-    color:#38bdf8;
-    margin-bottom:30px;
-}
-
-.menu p{
-    margin:15px 0;
-    color:#cbd5e1;
-}
-
-footer{
-    color:#94a3b8;
-    margin-top:30px;
-}
-
-/* Chat Section */
-
-.chat-section{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-}
-
-.chat-header{
-    background:#111827;
-    padding:20px;
-    font-size:22px;
-    font-weight:bold;
-}
-
-.chat-box{
-    flex:1;
-    padding:20px;
-    overflow-y:auto;
-    display:flex;
-    flex-direction:column;
-}
-
-.user-message,
-.bot-message{
-    max-width:70%;
-    padding:14px;
-    margin:10px 0;
-    border-radius:15px;
-}
-
-.user-message{
-    align-self:flex-end;
-    background:#2563eb;
-}
-
-.bot-message{
-    align-self:flex-start;
-    background:#1e293b;
-}
-
-/* Input Area */
-
-.input-area{
-    display:flex;
-    padding:20px;
-    background:#111827;
-}
-
-.input-area input{
-    flex:1;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#1e293b;
-    color:white;
-    outline:none;
-}
-
-.input-area button{
-    padding:15px 25px;
-    border:none;
-    margin-left:10px;
-    border-radius:10px;
-    background:#38bdf8;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* Contact Section */
-
-.contact-section{
-    background:#111827;
-    padding:30px;
-}
-
-.contact-section h2{
-    margin-bottom:20px;
-    color:#38bdf8;
-}
-
-.contact-section form{
-    display:flex;
-    flex-direction:column;
-}
-
-.contact-section input,
-.contact-section textarea{
-    margin-bottom:15px;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#1e293b;
-    color:white;
-    outline:none;
-}
-
-.contact-section textarea{
-    height:120px;
-    resize:none;
-}
-
-.contact-section button{
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#38bdf8;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* Mobile Responsive */
-
-@media(max-width:768px){
-
-    .sidebar{
-        display:none;
-    }
-
-    .user-message,
-    .bot-message{
-        max-width:90%;
-    }
-}
-
-/* About Page */
-
-.about-container{
-
-    max-width:800px;
-
-    margin:50px auto;
-
-    background:#111827;
-
-    padding:40px;
-
-    border-radius:20px;
-
-    color:white;
-
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-.about-container h1{
 
     color:#38bdf8;
-
-    margin-bottom:20px;
-
-    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+    line-height:1.3;
 }
 
-.about-container h2{
+/* SIDEBAR MENU */
 
-    margin-top:25px;
+.sidebar-menu p{
 
-    color:#38bdf8;
+    margin:22px 0;
+    font-size:20px;
 }
 
-.about-container p,
-.about-container li{
-
-    margin-top:10px;
-
-    line-height:1.8;
-
-    color:#cbd5e1;
-}
-
-.about-container ul{
-
-    padding-left:20px;
-}
-
-.about-container button{
-
-    margin-top:30px;
-
-    padding:15px 25px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#38bdf8;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:0.3s;
-}
-
-.about-container button:hover{
-
-    background:#0ea5e9;
-}
-
-/* About Button */
+/* ABOUT BUTTON */
 
 .about-btn{
 
-    margin-top:20px;
-
-    padding:12px 20px;
-
-    border:none;
-
-    border-radius:10px;
-
+    margin-top:35px;
+    padding:14px 22px;
     background:#38bdf8;
-
+    color:black;
+    border:none;
+    border-radius:12px;
     font-weight:bold;
-
     cursor:pointer;
-
     transition:0.3s;
 }
 
@@ -266,59 +74,7 @@ footer{
     background:#0ea5e9;
 }
 
-/* MOBILE RESPONSIVE */
-
-@media screen and (max-width: 768px){
-
-    .sidebar{
-        width:100%;
-        height:auto;
-        position:relative;
-        padding:20px;
-    }
-
-    .main-content{
-        margin-left:0;
-        width:100%;
-        padding:20px;
-    }
-
-    .chat-input-area{
-        flex-direction:column;
-    }
-
-    .chat-input-area input{
-        width:100%;
-        margin-bottom:10px;
-    }
-
-    .chat-input-area button{
-        width:100%;
-    }
-
-    .contact-form input,
-    .contact-form textarea{
-        width:100%;
-    }
-
-    .hero-title{
-        font-size:35px;
-    }
-
-    .sidebar-menu{
-        display:block;
-        margin-top:20px;
-    }
-
-    .sidebar-menu p{
-        font-size:18px;
-    }
-
-    .welcome-message{
-        width:100%;
-        font-size:18px;
-    }
-}
+/* CLEAR CHAT BUTTON */
 
 .clear-btn{
 
@@ -340,49 +96,214 @@ footer{
     background:#0ea5e9;
 }
 
-/* MOBILE SIDEBAR */
+/* FOOTER */
+
+.footer{
+
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+
+    margin-left:250px;
+    width:100%;
+    padding:35px;
+}
+
+/* HERO TITLE */
+
+.hero-title{
+
+    font-size:58px;
+    margin-bottom:45px;
+}
+
+/* CHAT BOX */
+
+.chat-box{
+
+    min-height:350px;
+}
+
+/* BOT MESSAGE */
+
+.bot-message{
+
+    background:#1c2942;
+    padding:22px 30px;
+    border-radius:18px;
+    width:fit-content;
+    font-size:24px;
+    margin-bottom:40px;
+}
+
+/* USER MESSAGE */
+
+.user-message{
+
+    background:#38bdf8;
+    color:black;
+    padding:18px 24px;
+    border-radius:16px;
+    width:fit-content;
+    margin-left:auto;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+/* CHAT INPUT AREA */
+
+.chat-input-area{
+
+    display:flex;
+    gap:20px;
+    margin-top:20px;
+    margin-bottom:70px;
+}
+
+/* CHAT INPUT */
+
+.chat-input-area input{
+
+    flex:1;
+    padding:18px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:#1c2942;
+    color:white;
+    font-size:18px;
+}
+
+/* SEND BUTTON */
+
+.chat-input-area button{
+
+    padding:18px 34px;
+    border:none;
+    border-radius:14px;
+    background:#38bdf8;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.chat-input-area button:hover{
+
+    background:#0ea5e9;
+}
+
+/* CONTACT TITLE */
+
+.contact-title{
+
+    color:#38bdf8;
+    font-size:54px;
+    margin-bottom:35px;
+}
+
+/* CONTACT FORM */
+
+.contact-form{
+
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+/* CONTACT INPUTS */
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+    padding:22px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    background:#1c2942;
+    color:white;
+    font-size:18px;
+}
+
+/* TEXTAREA */
+
+.contact-form textarea{
+
+    height:230px;
+    resize:none;
+}
+
+/* SUBMIT BUTTON */
+
+.contact-form button{
+
+    padding:20px;
+    border:none;
+    border-radius:16px;
+    background:#38bdf8;
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+
+    background:#0ea5e9;
+}
+
+/* MENU BUTTON */
 
 .menu-toggle{
 
     display:none;
 }
 
-/* MOBILE VIEW */
+/* MOBILE RESPONSIVE */
 
 @media screen and (max-width:768px){
+
+    /* MENU BUTTON */
 
     .menu-toggle{
 
         display:block;
         position:fixed;
-        top:15px;
-        left:15px;
-        z-index:1001;
+        top:20px;
+        left:20px;
+        z-index:1100;
         background:#38bdf8;
         color:black;
         border:none;
-        padding:10px 14px;
-        border-radius:8px;
-        font-size:24px;
+        padding:14px 18px;
+        border-radius:14px;
+        font-size:30px;
         cursor:pointer;
     }
 
+    /* SIDEBAR */
+
     .sidebar{
 
-        position:fixed;
         left:-260px;
-        top:0;
-        width:250px;
-        height:100%;
-        z-index:1000;
-        transition:0.3s;
-        overflow-y:auto;
     }
 
-    .show-sidebar{
+    .sidebar.active{
 
         left:0;
     }
+
+    /* MAIN CONTENT */
 
     .main-content{
 
@@ -391,20 +312,64 @@ footer{
         padding:20px;
     }
 
+    /* TITLE */
+
+    .hero-title{
+
+        margin-left:90px;
+        font-size:42px;
+        margin-top:10px;
+    }
+
+    /* CHAT BOX */
+
+    .bot-message{
+
+        width:100%;
+        font-size:18px;
+    }
+
+    /* CHAT INPUT */
+
     .chat-input-area{
 
         flex-direction:column;
     }
 
-    .chat-input-area input,
+    .chat-input-area input{
+
+        width:100%;
+    }
+
     .chat-input-area button{
 
         width:100%;
+    }
+
+    /* CONTACT */
+
+    .contact-title{
+
+        font-size:42px;
     }
 
     .contact-form input,
     .contact-form textarea{
 
         width:100%;
+    }
+
+    /* SIDEBAR TITLE */
+
+    .sidebar h2{
+
+        font-size:34px;
+    }
+
+    /* SIDEBAR MENU */
+
+    .sidebar-menu p{
+
+        font-size:18px;
     }
 }

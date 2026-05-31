@@ -1,102 +1,62 @@
-const inputField = document.getElementById("user-input");
+function sendMessage(){
 
-const chatBox = document.getElementById("chat-box");
+    const input = document.getElementById("user-input");
 
-function addMessage(message, className){
+    const chatBox = document.getElementById("chat-box");
 
-    const div = document.createElement("div");
+    const userText = input.value.trim();
 
-    div.classList.add(className);
+    if(userText === "") return;
 
-    div.innerText = message;
+    // USER MESSAGE
 
-    chatBox.appendChild(div);
+    const userMessage = document.createElement("div");
 
-    chatBox.scrollTop = chatBox.scrollHeight;
+    userMessage.className = "user-message";
+
+    userMessage.innerText = userText;
+
+    chatBox.appendChild(userMessage);
+
+    // RESPONSES
+
+    const responses = {
+
+        "hi":"Hello 👋",
+
+        "hello":"Hi there 😊",
+
+        "how are you":"I'm doing great 🚀",
+
+        "what is ai":"AI stands for Artificial Intelligence.",
+
+        "bye":"Goodbye 👋",
+
+        "help":"Try saying hi, hello or ask about AI."
+    };
+
+    // BOT MESSAGE
+
+    const botMessage = document.createElement("div");
+
+    botMessage.className = "bot-message";
+
+    botMessage.innerText =
+        responses[userText.toLowerCase()]
+        || "Sorry 😅 I don't understand that.";
+
+    setTimeout(() => {
+
+        chatBox.appendChild(botMessage);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    }, 500);
+
+    input.value = "";
 }
 
-async function sendMessage(){
-
-    const userMessage = inputField.value.trim();
-
-    if(userMessage === ""){
-        return;
-    }
-
-    addMessage(userMessage, "user-message");
-
-    inputField.value = "";
-
-    const response = await fetch("/get_response", {
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/json"
-        },
-
-        body:JSON.stringify({
-            message:userMessage
-        })
-
-    });
-
-    const data = await response.json();
-
-    addMessage(data.response, "bot-message");
-}
-
-inputField.addEventListener("keypress", function(event){
-
-    if(event.key === "Enter"){
-        sendMessage();
-    }
-
-});
-
-
-// Contact Form
-
-document.getElementById("contact-form")
-
-.addEventListener("submit", async function(event){
-
-    event.preventDefault();
-
-    const name = document.getElementById("name").value;
-
-    const email = document.getElementById("email").value;
-
-    const message = document.getElementById("message").value;
-
-    const response = await fetch("/contact", {
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/json"
-        },
-
-        body:JSON.stringify({
-
-            name:name,
-
-            email:email,
-
-            message:message
-        })
-    });
-
-    const data = await response.json();
-
-    if(data.status === "success"){
-
-        alert("Message Submitted Successfully ✅");
-
-        document.getElementById("contact-form").reset();
-    }
-
-});
+/* CLEAR CHAT */
 
 function clearChat(){
 
@@ -109,9 +69,11 @@ function clearChat(){
     `;
 }
 
+/* MOBILE SIDEBAR */
+
 function toggleSidebar(){
 
     const sidebar = document.getElementById("sidebar");
 
-    sidebar.classList.toggle("show-sidebar");
+    sidebar.classList.toggle("active");
 }
