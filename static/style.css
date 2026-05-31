@@ -265,3 +265,77 @@ footer{
 
     background:#0ea5e9;
 }
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width: 768px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+        padding:20px;
+    }
+
+    .main-content{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .chat-input-area{
+        flex-direction:column;
+    }
+
+    .chat-input-area input{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .chat-input-area button{
+        width:100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        width:100%;
+    }
+
+    .hero-title{
+        font-size:35px;
+    }
+
+    .sidebar-menu{
+        display:block;
+        margin-top:20px;
+    }
+
+    .sidebar-menu p{
+        font-size:18px;
+    }
+
+    .welcome-message{
+        width:100%;
+        font-size:18px;
+    }
+}
+
+.clear-btn{
+
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:#38bdf8;
+    color:black;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.clear-btn:hover{
+
+    background:#0ea5e9;
+}

@@ -97,3 +97,14 @@ document.getElementById("contact-form")
     }
 
 });
+
+function clearChat(){
+
+    const chatBox = document.getElementById("chat-box");
+
+    chatBox.innerHTML = `
+        <div class="bot-message">
+            Hello 👋 Welcome to AI Chatbot
+        </div>
+    `;
+}
