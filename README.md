@@ -1,23 +1,19 @@
-````md
-# 🤖 Professional AI Rule-Based Chatbot
+
+🤖 Professional AI Rule-Based Chatbot
 
 A modern and responsive AI Rule-Based Chatbot built using **Python, Flask, HTML, CSS, and JavaScript**.
 
 This chatbot responds to predefined commands, includes a modern user interface, voice assistant support, smart keyword detection, typing animations, and a contact form.
 
----
-
-## 🚀 Live Demo
+🚀 Live Demo
 
 Deploy on Render:
 
 https://ai-chatbot-fm5x.onrender.com/
 
----
+📌 Features
 
-## 📌 Features
-
-### 🤖 Chatbot Features
+🤖 Chatbot Features
 - Rule-Based AI Responses
 - Smart Keyword Detection
 - Typing Animation
@@ -53,11 +49,9 @@ https://ai-chatbot-fm5x.onrender.com/
 - Render (Deployment)
 - GitHub
 
----
 
-## 📂 Project Structure
+📂 Project Structure
 
-```text
 AI_CHATBOT/
 │
 ├── app.py
@@ -73,49 +67,34 @@ AI_CHATBOT/
 │   └── about.html
 │
 └── README.md
-````
 
----
+ ⚙️ Installation
 
-## ⚙️ Installation
+1. Clone Repository
 
-### 1. Clone Repository
+git clone https://github.com/vishal-jindal2006/Task-1-Vishal-Jindal
 
-```bash
-git clone https://github.com/your-username/AI-CHATBOT.git
-```
+2. Open Project
 
-### 2. Open Project
-
-```bash
 cd AI-CHATBOT
-```
 
-### 3. Install Dependencies
+3. Install Dependencies
 
-```bash
 pip install -r requirements.txt
-```
 
-### 4. Run Application
+4. Run Application
 
-```bash
 python app.py
-```
 
-### 5. Open Browser
+5. Open Browser
 
-```text
 http://127.0.0.1:5000
-```
 
----
 
-## 💬 Supported Commands
+💬 Supported Commands
 
 Examples:
 
-```text
 hi
 hello
 hey
@@ -133,19 +112,16 @@ what is css
 what is javascript
 thank you
 bye
-```
 
----
 
-## 🎤 Voice Assistant
+🎤 Voice Assistant
 
 Click the microphone button and speak your message.
 
 The chatbot automatically converts speech into text and generates a response.
 
----
 
-## 📱 Mobile Responsive
+ 📱 Mobile Responsive
 
 The website is fully responsive and supports:
 
@@ -154,9 +130,8 @@ The website is fully responsive and supports:
 * Tablets
 * Desktop Browsers
 
----
 
-## 📬 Contact Form
+📬 Contact Form
 
 Users can submit:
 
@@ -166,9 +141,8 @@ Users can submit:
 
 Messages are stored for future review.
 
----
 
-## 🔮 Future Improvements
+ 🔮 Future Improvements
 
 * OpenAI API Integration
 * Gemini AI Integration
@@ -179,9 +153,8 @@ Messages are stored for future review.
 * Dark / Light Theme Toggle
 * PWA Mobile App Support
 
----
 
-## 👨‍💻 Developer
+👨‍💻 Developer
 
 **Vishal Jindal**
 
@@ -190,9 +163,7 @@ Email: [jindalvishal2006@gmail.com](mailto:jindalvishal2006@gmail.com)
 GitHub:
 https://github.com/vishal-jindal2006
 
----
-
-## ⭐ Support
+⭐ Support
 
 If you like this project, please give it a star on GitHub.
 
@@ -200,11 +171,6 @@ If you like this project, please give it a star on GitHub.
 🍴 Fork this repository
 🚀 Share with friends
 
----
-
-## 📄 License
+📄 License
 
 This project is developed for educational, portfolio, and learning purposes.
-
-```
-```
